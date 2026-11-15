@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+- [新功能] 增加 GitHub Pages 在线报告归档，复用 Markdown 渲染，支持日期切换、搜索、下载与打印；每日分析成功后自动发布，仅收集报告文件，部署说明见 `docs/github-pages.md`。
+
 - [修复] Docker 构建与启动入口在 ARM64 架构下默认设置 `OPENBLAS_CORETYPE=ARMV8`（保留用户显式覆盖且不影响 x86_64），修复 Apple Silicon Linux 虚拟机因 OpenBLAS SME 指令分发导致 `Illegal instruction (exit code 132)` 崩溃的问题，并补充部署排障说明。
 
 - [修复] 关闭 LiteLLM 逐 chunk 的 streaming success logging（本项目未注册 LiteLLM callback，用量统计不受影响），修复 Windows 上每个流式 chunk 新建事件循环与回环 socketpair、全局线程池卡在 `accept()`，导致 CLI 打印「程序执行完成」后进程不退出且额外占用大量 CPU 的问题。

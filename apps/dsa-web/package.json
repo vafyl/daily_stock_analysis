@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --config vite.pages.config.ts",
     "lint": "eslint .",
     "test": "vitest run",
     "test:smoke": "playwright test",
